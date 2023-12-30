@@ -16,8 +16,11 @@ fi
 
 DIR="$1"
 CIRCUIT="$2"
-ZKEY_PATH="${DIR}/target/${CIRCUIT}_final.zkey"
-ARKZKEY_PATH="${DIR}/target/${CIRCUIT}_final.arkzkey"
+# ZKEY_PATH="${DIR}/target/${CIRCUIT}_final.zkey"
+# ARKZKEY_PATH="${DIR}/target/${CIRCUIT}_final.arkzkey"
+ZKEY_PATH="selective-disclosure/circuit_final.zkey"
+ARKZKEY_PATH="selective-disclosure/circuit_final.arkzkey"
+# mopro-core/examples/circom/selective-disclosure/circuit_final.zkey
 
 # Check if ZKEY_PATH exists
 if [ ! -f "$ZKEY_PATH" ]; then
