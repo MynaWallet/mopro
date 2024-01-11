@@ -9,15 +9,18 @@
 set -euo pipefail
 
 # Check if arguments are provided
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <dir> <circuit-name>"
-    exit 1
-fi
+# if [ "$#" -ne 2 ]; then
+#     echo "Usage: $0 <dir> <circuit-name>"
+#     exit 1
+# fi
 
-DIR="$1"
-CIRCUIT="$2"
-ZKEY_PATH="${DIR}/target/${CIRCUIT}_final.zkey"
-ARKZKEY_PATH="${DIR}/target/${CIRCUIT}_final.arkzkey"
+# DIR="$1"
+# CIRCUIT="$2"
+# ZKEY_PATH="${DIR}/target/${CIRCUIT}_final.zkey"
+# ARKZKEY_PATH="${DIR}/target/${CIRCUIT}_final.arkzkey"
+ZKEY_PATH="selective-disclosure/circuit_final.zkey"
+ARKZKEY_PATH="selective-disclosure/circuit_final.arkzkey"
+# mopro-core/examples/circom/selective-disclosure/circuit_final.zkey
 
 # Check if ZKEY_PATH exists
 if [ ! -f "$ZKEY_PATH" ]; then
@@ -31,7 +34,7 @@ if ! command -v arkzkey-util &> /dev/null; then
     exit 1
 fi
 
-echo "Generate arkzkey file for ${CIRCUIT}..."
+# echo "Generate arkzkey file for ${CIRCUIT}..."
 if [ ! -f "${ARKZKEY_PATH}" ]; then
     arkzkey-util ${ZKEY_PATH}
 else
