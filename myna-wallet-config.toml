@@ -1,0 +1,21 @@
+# myna-wallet-config.toml
+
+[build]
+# For iOS device_type can be x86_64, simulator, device
+ios_device_type = "device" # Options: x86_64, simulator, device
+# For Android device_type can be x86_64, x86, arm, arm64
+android_device_type = "arm64" # Options: x86_64, x86, arm, arm64
+
+# debug is for Rust library to be in debug mode and release for release mode
+# We recommend release mode by default for performance
+build_mode = "release" # Options: debug, release
+
+[circuit]
+dir = "mopro-core/examples/circom/mynaSelectiveDisclosure" # Directory of the circuit
+name = "selective-disclosure"                  # Name of the circuit
+
+[dylib]
+# NOTE: Dylib support is experimental and requires some fiddling in iOS
+# See https://github.com/oskarth/mopro/pull/37 and https://github.com/oskarth/mopro/pull/38
+use_dylib = true        # Options: true, false
+name = "mynaSelectiveDisclosure.dylib" # Name of the dylib file, only used if use_dylib is true
