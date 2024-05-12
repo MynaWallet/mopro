@@ -28,6 +28,7 @@ export BUILD_CONFIG_PATH="$(pwd)/$CONFIG_FILE"
 
 # Print which configuration file is being used
 echo "Using configuration file: $CONFIG_FILE"
+echo "Config file path: $BUILD_CONFIG_PATH"
 
 # Read configurations from TOML file within [build] block
 DEVICE_TYPE=$(read_toml "$CONFIG_FILE" "build.ios_device_type")
